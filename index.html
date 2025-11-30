@@ -2,22 +2,58 @@
 <html lang='eu'>
 <head>
 <meta charset='UTF-8'>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Iker Iñigo Arteaga — 2025">
 <title>Konpostaje Jokoa</title>
 <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-<h1>Konpostaje Simulagailua – Joko Modua</h1>
-<div id='game'>
-  <form id='compostForm'>
-    <label>Hezetasuna (%): <input type='number' id='hezetasuna' required></label><br>
-    <label>Tenperatura (°C): <input type='number' id='tenperatura' required></label><br>
-    <label>pH: <input type='number' step='0.1' id='ph' required></label><br>
-    <label>C/N erlazioa: <input type='number' id='cn' required></label><br>
-    <label>Denbora (egunak): <input type='number' id='denbora' required></label><br>
+<header>
+  <h1>Konpostaje Simulagailua – Joko Modua</h1>
+  <p class="meta">Egilea: Iker Iñigo Arteaga — 2025</p>
+</header>
+
+<main id='game'>
+  <section id="intro">
+    <p>Joko hau irudiekin dator; asset bakoitza <a href="assets/README.md" target="_blank" rel="noopener">assets/</a>-en zehazten da (lizentzia eta atribuzioak).</p>
+    <figure id="hero">
+      <!-- Imagen ilustrativa general -->
+      <img src="assets/images/hero-illustration.png" alt="Ilustración del flujo de compost" width="320">
+      <figcaption>Irudia: ilustrazioa (ikusi assets/README.md atribuzioa).</figcaption>
+    </figure>
+  </section>
+
+  <form id='compostForm' onsubmit="return false;">
+    <label>Hezetasuna (%): <input type='number' id='hezetasuna' required min="0" max="100"></label><br>
+    <label>Tenperatura (°C): <input type='number' id='tenperatura' required min="-10" max="100"></label><br>
+    <label>pH: <input type='number' step='0.1' id='ph' required min="0" max="14"></label><br>
+    <label>C/N erlazioa: <input type='number' id='cn' required min="0"></label><br>
+    <label>Denbora (egunak): <input type='number' id='denbora' required min="0"></label><br>
     <button type='button' onclick='konfirmatu()'>KONFIRMATU</button>
   </form>
-  <div id='emaitza'></div>
-</div>
-<script src='script.js'></script>
+
+  <div id='emaitza' aria-live="polite"></div>
+
+  <!-- Imagen que sólo se muestra cuando los parámetros son correctos -->
+  <div id="success" style="display:none; margin-top:1rem; text-align:center;">
+    <img id="success-img" src="assets/images/compost-bin.png" alt="Contenedor de compost — condiciones correctas" width="280">
+    <p id="success-text" style="font-weight:bold;color:green;">Ondo! Baldintzak egokiak dira konpostatzeko.</p>
+  </div>
+</main>
+
+<footer>
+  <p>Egilea: Iker Iñigo Arteaga — 2025 · Proiektu hau argitaratuta dago <a href="LICENSE" target="_blank" rel="noopener">Creative Commons BY-SA 4.0</a> lizentziarekin.</p>
+  <p>Aplikazioaren asset guztiak (irudiak, audioa) <code>assets/</code> karpetan jarriko dira; bakoitzak bere atribuzioa eta lizentzia izan behar du <code>assets/README.md</code>-ean.</p>
+
+  <!-- Logo del centro debajo de la licencia -->
+  <div style="margin-top:0.5rem;">
+    <img src="assets/images/fraisoro-logo.png" alt="Fraisoro eskola logo" width="200">
+  </div>
+
+  <p>Publikatzea erraza: GitHub Pages / Netlify / Vercel erabiliz repo-a push egin eta hau nabigatzailean exekutatu daiteke.</p>
+  <p><a href="ATTRIBUTION.md" target="_blank" rel="noopener">Atribuzio osatua (ATTRIBUTION.md)</a></p>
+</footer>
+
+<script src='script.js' defer></script>
 </body>
 </html>
