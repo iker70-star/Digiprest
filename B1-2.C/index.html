@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='eu'>
+<head>
+<meta charset='UTF-8'>
+<title>Konpostaje Jokoa</title>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<h1>Konpostaje Simulagailua – Joko Modua</h1>
+<div id='game'>
+  <form id='compostForm'>
+    <label>Hezetasuna (%): <input type='number' id='hezetasuna' required></label><br>
+    <label>Tenperatura (°C): <input type='number' id='tenperatura' required></label><br>
+    <label>pH: <input type='number' step='0.1' id='ph' required></label><br>
+    <label>C/N erlazioa: <input type='number' id='cn' required></label><br>
+    <label>Denbora (egunak): <input type='number' id='denbora' required></label><br>
+    <button type='button' onclick='konfirmatu()'>KONFIRMATU</button>
+  </form>
+  <div id='emaitza'></div>
+</div>
+<script src='script.js'></script>
+</body>
+</html>
