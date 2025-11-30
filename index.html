@@ -14,15 +14,6 @@
 </header>
 
 <main id='game'>
-  <section id="intro">
-    <p>Joko hau irudiekin dator; asset bakoitza <a href="assets/README.md" target="_blank" rel="noopener">assets/</a>-en zehazten da (lizentzia eta atribuzioak).</p>
-    <figure id="hero">
-      <!-- Imagen ilustrativa general -->
-      <img src="assets/images/hero-illustration.png" alt="Ilustración del flujo de compost" width="320">
-      <figcaption>Irudia: ilustrazioa (ikusi assets/README.md atribuzioa).</figcaption>
-    </figure>
-  </section>
-
   <form id='compostForm' onsubmit="return false;">
     <label>Hezetasuna (%): <input type='number' id='hezetasuna' required min="0" max="100"></label><br>
     <label>Tenperatura (°C): <input type='number' id='tenperatura' required min="-10" max="100"></label><br>
@@ -34,7 +25,6 @@
 
   <div id='emaitza' aria-live="polite"></div>
 
-  <!-- Imagen que sólo se muestra cuando los parámetros son correctos -->
   <div id="success" style="display:none; margin-top:1rem; text-align:center;">
     <img id="success-img" src="assets/images/compost-bin.png" alt="Contenedor de compost — condiciones correctas" width="280">
     <p id="success-text" style="font-weight:bold;color:green;">Ondo! Baldintzak egokiak dira konpostatzeko.</p>
@@ -42,16 +32,20 @@
 </main>
 
 <footer>
-  <p>Egilea: Iker Iñigo Arteaga — 2025 · Proiektu hau argitaratuta dago <a href="LICENSE" target="_blank" rel="noopener">Creative Commons BY-SA 4.0</a> lizentziarekin.</p>
-  <p>Aplikazioaren asset guztiak (irudiak, audioa) <code>assets/</code> karpetan jarriko dira; bakoitzak bere atribuzioa eta lizentzia izan behar du <code>assets/README.md</code>-ean.</p>
+  <p>
+    <a href="https://example.com">Konpostaje Simulagailua – Joko Modua</a> © 2025 by
+    <a href="https://example.com">Iker Iñigo Arteaga</a>
+    is licensed under
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="cc" style="max-width:1em;max-height:1em;margin-left:.2em;">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="by" style="max-width:1em;max-height:1em;margin-left:.2em;">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="nc" style="max-width:1em;max-height:1em;margin-left:.2em;">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="sa" style="max-width:1em;max-height:1em;margin-left:.2em;">
+  </p>
 
-  <!-- Logo del centro debajo de la licencia -->
   <div style="margin-top:0.5rem;">
     <img src="assets/images/fraisoro-logo.png" alt="Fraisoro eskola logo" width="200">
   </div>
-
-  <p>Publikatzea erraza: GitHub Pages / Netlify / Vercel erabiliz repo-a push egin eta hau nabigatzailean exekutatu daiteke.</p>
-  <p><a href="ATTRIBUTION.md" target="_blank" rel="noopener">Atribuzio osatua (ATTRIBUTION.md)</a></p>
 </footer>
 
 <script src='script.js' defer></script>
